@@ -43,8 +43,11 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'mailchimp-api', '~> 2.0.6', require: 'mailchimp'
+# gem 'mailchimp'
+# gem 'mailchimp-api', '~> 2.0.6'
+gem 'mailchimp-api', require: 'mailchimp'
 gem 'pg'
+gem 'haml'
 
 group :production do
   gem 'rails_12factor', '0.0.3'
