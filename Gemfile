@@ -48,6 +48,8 @@ end
 gem 'mailchimp-api', require: 'mailchimp'
 gem 'pg'
 gem 'haml'
+gem 'bootstrap-sass', '~> 3.3.3'
+gem 'pry'
 
 group :production do
   gem 'rails_12factor', '0.0.3'

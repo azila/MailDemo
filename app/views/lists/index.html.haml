@@ -1,0 +1,17 @@
+.container-fluid
+  %h2.text-center Your MailChimp Lists
+
+  %table.table.table-hover.table-striped
+    %tr
+      %th Name
+      %th Subscriber Count
+      %th DateCreated
+      %th List Rating
+     
+      -@lists.each do |list|
+        %tr
+          %td= link_to list['name'], show_list_path(list['id'])  
+          %td= list['stats']['member_count']
+          %td= list['date_created']
+          %td= list['list_rating']
+         

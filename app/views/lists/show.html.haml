@@ -1,0 +1,26 @@
+.container-fluid
+  %h2= @list['name']
+
+  %h3 Add a New Member
+  %p= "You will not see the member listed until they click the link in the confirmation email."
+  %form{ action: subscribe_path(@list['id']), method: :post, class: 'form-inline'}
+    .form-inputs
+      %input{ type: "hidden", name: "list_id", value: @list['id'] } 
+      %input{ type: "email", name: "email", placeholder: "email address" }
+      %input{ type: "submit", class: 'btn btn -success', value: "Add Member"}
+
+  %h3 Members
+
+  %table.table.table-hover.table-striped
+    %tr
+      %th Email
+      %th Subscribed Since
+      %th Member Rating
+     
+      -@members.each do |member|
+        %tr
+          %td= member['email'] 
+          %td= member['timestamp']
+          %td= member['member_rating']
+
+

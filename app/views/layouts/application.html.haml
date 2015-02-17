@@ -1,0 +1,23 @@
+!!!
+%html{ lang: 'en' }
+  %head
+    %title MailsDemo
+    %meta{ charset: 'utf-8' }/
+    %meta{ content: 'IE=Edge,chrome=1', 'http-equiv' => 'X-UA-Compatible' }/
+    %meta{ content: 'width=device-width, initial-scale=1.0', name: 'viewport' }/
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
+  %body
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          .navbar-brand
+            = link_to 'MailsDemo', root_path 
+        %p.navbar-text.navbar-center
+          / = link_to 'Lists', lists_path
+
+    .container-fluid
+      = render "layouts/flash"
+      = yield
